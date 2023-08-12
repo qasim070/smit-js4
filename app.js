@@ -54,6 +54,7 @@ let task4 = () => {
         case 6:
             day = "Saturday";
             alert("Today is " + day);
+            break;
         default:
             alert("Please Enter any number between 1 to 7")
         break;
@@ -61,26 +62,89 @@ let task4 = () => {
 
 }
 let task5 = () => {
-    alert("Task task5 ")
-    
+    let day = +prompt("Enter the day(1-31):");
+    let month = +prompt("Enter the month (1-12):");
+    let year = +prompt("Enter the year:");
+
+    let inputDate = new Date(year, month - 1, day); 
+    let dayCheck = inputDate.getDay();
+
+    if (dayCheck === 0 || dayCheck === 6) {
+        alert("The provided date is a weekend.");
+    } else {
+        alert("The provided date is not a weekend.");
+    }
+
 }
 let task6 = () => {
-    alert("Task task6 ")
+    let r = +prompt("Enter the value of r");
+    let h = +prompt("Enter the value of h");
+
+    let formula = 3.142 * r * r * h ;
+    let result =  Math.round(formula).toFixed(4);
+    alert(result);
     
 }
 let task7 = () => {
-    alert("Task task7 ")
+   let arr = [40, 100, 1, 5, 25, 10]
+   alert( 'Old Array\n'+arr)
+   let result = arr.sort(function(a, b){
+        return a-b
+   })
+   alert( 'Sorted Array\n'+result)
     
 }
 let task8 = () => {
-    alert("Task task8 ")
-    
+   let num = [21, 3, 50, -2, -1, 10];
+   let index = num.indexOf(-1);
+    alert('Old Array\n'+num);
+
+    num[index] = 0;
+    alert('Modified Array\n'+num);
 }
 let task9 = () => {
-    alert("Task task9 ")
+    let library = [{
+        author:'Bill Gates',
+        title: 'The Road Ahead',
+        libraryId: 1254
+    },{
+        author:'Steve Jobs',
+        title: 'Walter Isaacson',
+        libraryId: 4264
+    },{
+        author:'Suzzane Collins',
+        title: 'Mockingjay: The Final Book of The Hunger Games',
+        libraryId: 3245
+    }]
+
+    library.sort((a, b) => a.title.localeCompare(b.title))
+    alert(library)
+    console.log(library);
+    // alert('Sorted Object\n'+sortedLibrary.title)
+ 
     
 }
 let task10 = () => {
-    alert("Task task10")
-    
+    let library = [{
+        author:'Bill Gates',
+        title: 'The Road Ahead',
+        libraryId: 1254
+    },{
+        author:'Steve Jobs',
+        title: 'Walter Isaacson',
+        libraryId: 4264
+    },{
+        author:'Suzzane Collins',
+        title: 'Mockingjay: The Final Book of The Hunger Games',
+        libraryId: 3245
+    }]
+
+
+    let bookName = prompt('Enter the Book Name that You want to Search')
+
+    let book = library.find(  (e)=> {
+    //    return e.title === 'The Road Ahead';
+       return e.title.toLowerCase().split(' ').join('') === bookName.toLowerCase().split(' ').join('');
+    })
+    alert('You Searched book has been Found!\n\n' + book.title+'\n' + book.author+'\n' + book.libraryId)
 }
