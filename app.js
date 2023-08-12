@@ -1,5 +1,6 @@
 let task1 = () => {
     let num = [1,2,3,4,6,8,9];
+    alert(num)
     let result = num.filter( function(e){
         return e % 2 === 0;
     });
