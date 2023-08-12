@@ -119,7 +119,7 @@ let task9 = () => {
     }]
 
     library.sort((a, b) => a.title.localeCompare(b.title))
-    alert(library)
+    // alert(library)
     console.log(library);
     // alert('Sorted Object\n'+sortedLibrary.title)
  
